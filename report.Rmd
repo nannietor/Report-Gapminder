@@ -1,0 +1,31 @@
+---
+title: "Report"
+author: "Natalia"
+date: "Tuesday, July 07, 2015"
+output: html_document
+---
+
+#Analysis on **Brazil**, **United States** and **Canada**
+
+```{r loading, echo=FALSE, warning=FALSE, message = FALSE}
+library(dplyr)
+library(ggplot2)
+df <- read.csv('C:/Users/Natalia/Desktop/swc-intro/raw-data/gapminder-FiveYearData.csv')
+```
+
+```{r echo=FALSE, warning=FALSE}
+
+country1 <- filter(df, country == "Brazil")
+ggplot(data = country1, aes(x = year, y = gdpPercap)) + geom_point()
+
+country2 <- filter(df, country == "United States")
+ggplot(data = country2, aes(x = year, y = gdpPercap)) + geom_point()
+
+country3 <- filter(df, country == "Canada")
+ggplot(data = country3, aes(x = year, y = gdpPercap)) + geom_point()
+
+```
+
+
+In all countries, GDP per capital increases as year passes.
+
